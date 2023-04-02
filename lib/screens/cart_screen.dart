@@ -40,7 +40,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
-                    ElevatedButton(
+                    TextButton(
                       onPressed: () {
                         Provider.of<Orders>(context, listen: false).addOrders(
                             cart.items.values.toList(), cart.totalAmount);
