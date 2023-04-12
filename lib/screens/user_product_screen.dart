@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:shopapp/widgets/app_drawer.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +9,10 @@ import 'edit_product_screen.dart';
 
 class UserProducts extends StatelessWidget {
   static const routeName = '/userproducts';
+
+  // Future<Void> _pullToRefresh(){
+
+  // };
 
   @override
   Widget build(BuildContext context) {

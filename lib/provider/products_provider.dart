@@ -65,7 +65,7 @@ class Products with ChangeNotifier {
         loadedProducts.add(Product(
           id: prodId.toString(),
           title: prodData['title'].toString(),
-          description: prodData['description'].toString(),
+          description: prodData['description'],
           price: prodData['price'],
           isFavorite: prodData['isFavorite'],
           imageUrl: prodData['imageUrl'].toString(),
@@ -82,10 +82,10 @@ class Products with ChangeNotifier {
     var url = Uri.parse(
         'https://myshop-7e0d6-default-rtdb.firebaseio.com/products.json');
     try {
-      final response = await http.patch(url,
+      final response = await http.post(url,
           body: jsonEncode({
             'title': product.title,
-            'descrption': product.description,
+            'description': product.description,
             'imageUrl': product.imageUrl,
             'price': product.price,
           }));
@@ -129,7 +129,7 @@ class Products with ChangeNotifier {
       await http.patch(url,
           body: jsonEncode({
             'title': newPoduct.title,
-            'desccription': newPoduct.description,
+            'description': newPoduct.description,
             'imageUrl': newPoduct.imageUrl,
             'price': newPoduct.price
           }));
